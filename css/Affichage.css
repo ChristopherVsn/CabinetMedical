@@ -1,0 +1,91 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+    padding: 0.6rem;
+}
+p {
+    text-align: center;
+    margin-top: 15px;
+}
+form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    max-width: 800px;
+    margin: 5px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;  /*Pour que la souris devienne une main quand on survolle le bouton*/
+    grid-column: 4/5;
+
+}
+hr{
+    margin: 20px;
+    border-top: 1px solid #06C482;
+
+}
+input[type="reset"] {
+    background-color: #6C757D;
+    color: #fff;
+    cursor: pointer;
+    grid-column: 3/4;
+
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    width: 8%;
+}
+
+th {
+    background-color: rgba(0, 170, 255, 0.867);
+}
+
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+tbody tr:hover {
+    background-color: #d2eeffc8; 
+    transition: background-color 0.3s ease
+}
+
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

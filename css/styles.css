@@ -1,0 +1,12 @@
+h1 {
+    color: black;
+    text-align: center;
+    padding: 0.6rem;
+}
+p {
+    text-align: center;
+    margin-top: 15px;
+}
+label{
+    font-weight: bold;
+}

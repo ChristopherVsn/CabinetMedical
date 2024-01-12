@@ -1,0 +1,67 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    color: #007BFF;
+    text-align: center;
+}
+
+p {
+    color: #333;
+    text-align: center;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+label {
+    padding: 6px;
+
+}
+input {
+    padding: 6px;
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+input[type="hidden"] {
+    display: none;
+}
+select {
+    width: 95%;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 2px;
+    border: 1px solid #767676;
+    box-sizing: border-box;
+    appearance: none;
+    background-color: white;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23000000" width="18px" height="18px"><path d="M7 10l5 5 5-5z" /></svg>');
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    cursor: pointer;
+}
+
+select option {
+    background-color: #fff;
+    color: #333;
+}
+
+select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.8);
+}
