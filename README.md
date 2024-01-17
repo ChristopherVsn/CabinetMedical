@@ -1,7 +1,4 @@
-# Cabinet Médical Manager
-
-![Cabinet Médical](lien_vers_une_image.png)
-
+# Cabinet Médical
 ## Présentation
 
 Bienvenue sur **Cabinet Médical** ! Ce projet universitaire a été développé dans le cadre d'un cours pratique visant à mettre en pratique les concepts de gestion de bases de données et de développement web. L'objectif principal est de créer une application permettant de gérer un cabinet médical, incluant la gestion des clients, des médecins, et des consultations.
