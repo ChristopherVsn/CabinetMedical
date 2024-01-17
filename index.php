@@ -6,6 +6,7 @@
         $row = $reqSearch->fetch(PDO::FETCH_ASSOC);
         $count = $row['c'];
         if($count == 1){
+        	try{
         	$reqVerifMDP = $linkpdo->prepare("SELECT count(*) as cs FROM utilisateur WHERE Nom = ? and MotDePasse  = ?");
 	        $reqVerifMDP->execute(array($_POST['nom'],$_POST['mdp']));
 	        $row1 = $reqVerifMDP->fetch(PDO::FETCH_ASSOC);
@@ -16,7 +17,7 @@
                 }
                 $_SESSION['username'] = $_POST['nom'];
 			    $_SESSION['timeout'] = time() + 60; // 5 min
-	        	$delai=2; // Délai en secondes
+	        	$delai=0.3; // Délai en secondes
 				$url='php/AffichageClient.php'; 
 				header('Refresh: '.$delai.';url='.$url);
 	        } else {
@@ -24,6 +25,9 @@
 					alert("Mot de passe incorrect");
 				</script>';
 	        }
+	        }catch(PDOException $e) {
+                        echo "Erreur lors dans le requete de connexion : " . $e->getMessage();
+             }
         } else {
 			echo '<script type="text/javascript">
 				alert("Utilisateur inexistant");

@@ -43,7 +43,7 @@
         <label for="heure" class="form-label">Heure </label>
         <input type="time" id="heure" name="heure" maxlength="5" placeholder="110000" class="form-input" required>
         <label for="duree" class="form-label">Durée (en minute)</label>
-        <input type="text" id="duree" name="duree" placeholder="20" class="form-input" required>
+        <input type="number" id="duree" name="duree" placeholder="20" class="form-input" required>
         <input type="reset" value="annuler" name="Annuler" class="form-button">
         <input type="submit" value="valider" name="Ajouter" class="form-button">
     </form>

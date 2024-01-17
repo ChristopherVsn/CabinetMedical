@@ -34,37 +34,37 @@ if (isset($_POST['numSecuriteSocial'])) {
     $vNouvLieuNaissance = $_POST['lieuNaissance'];
     $vNouvTelephone = $_POST['telephone'];
 
-    try {
-        $vIdClient=getClientID($vNom,$vPrenom);
-        $req = $linkpdo->prepare('UPDATE client SET NumSecuriteSocial=:nouvNumSecuriteSocial, Civilite=:nouvCivilite,
-            Prenom=:nouvPrenom, Nom=:nouvNom, Ville=:nouvVille, CodePostal=:nouvCodePostal, Adresse=:nouvAdresse, DateNaissance=:nouvDateNaissance, LieuNaissance=:nouvLieuNaissance, Telephone=:nouvTelephone, IdMedecin=:nouvIdMedecin WHERE
-            IdClient=:vIdClient');
-        if ($req == false) {
-            throw new Exception("Erreur sur la requête de modification");
-        } else {
+try {
+    $vIdClient=getClientID($vNom,$vPrenom);
+    $req = $linkpdo->prepare('UPDATE client SET NumSecuriteSocial=:nouvNumSecuriteSocial, Civilite=:nouvCivilite,
+        Prenom=:nouvPrenom, Nom=:nouvNom, Ville=:nouvVille, CodePostal=:nouvCodePostal, Adresse=:nouvAdresse, DateNaissance=:nouvDateNaissance, LieuNaissance=:nouvLieuNaissance, Telephone=:nouvTelephone, IdMedecin=:nouvIdMedecin WHERE
+        IdClient=:vIdClient');
+    if ($req == false) {
+        throw new Exception("Erreur sur la requête de modification");
+    } else {
 
-            if ($_POST['medecin'] == "") {
-                $vNouvIdMedecin = NULL;
-            } else {
-                $nomMedecin = explode(" ", $_POST['medecin'])[0];
-                $prenomMedecin = explode(" ", $_POST['medecin'])[1];
-                $vNouvIdMedecin = getMedecinID($nomMedecin, $prenomMedecin);
-            }
-            $req->execute(array(
-                'nouvNumSecuriteSocial' => $vNouvNumSecuriteSocial,
-                'nouvCivilite' => $vNouvCivilite,
-                'nouvPrenom' => $vNouvPrenom,
-                'nouvNom' => $vNouvNom,
-                'nouvVille' => $vNouvVille,
-                'nouvCodePostal' => $vNouvCodePostal,
-                'nouvAdresse' => $vNouvAdresse,
-                'nouvDateNaissance' => $vNouvDateNaissance,
-                'nouvLieuNaissance' => $vNouvLieuNaissance,
-                'nouvTelephone' => $vNouvTelephone,
-                'nouvIdMedecin' => $vNouvIdMedecin,
-                'vIdClient' => $vIdClient,
-            ));
+        if ($_POST['medecin'] == "") {
+            $vNouvIdMedecin = NULL;
+        } else {
+            $nomMedecin = explode(" ", $_POST['medecin'])[0];
+            $prenomMedecin = explode(" ", $_POST['medecin'])[1];
+            $vNouvIdMedecin = getMedecinID($nomMedecin, $prenomMedecin);
         }
+        $req->execute(array(
+            'nouvNumSecuriteSocial' => $vNouvNumSecuriteSocial,
+            'nouvCivilite' => $vNouvCivilite,
+            'nouvPrenom' => $vNouvPrenom,
+            'nouvNom' => $vNouvNom,
+            'nouvVille' => $vNouvVille,
+            'nouvCodePostal' => $vNouvCodePostal,
+            'nouvAdresse' => $vNouvAdresse,
+            'nouvDateNaissance' => $vNouvDateNaissance,
+            'nouvLieuNaissance' => $vNouvLieuNaissance,
+            'nouvTelephone' => $vNouvTelephone,
+            'nouvIdMedecin' => $vNouvIdMedecin,
+            'vIdClient' => $vIdClient,
+        ));
+    }
         echo "<script>
                 alert('Le client a été modifié avec succès.');
                 window.location.href = 'AffichageClient.php';
@@ -111,7 +111,7 @@ include("../html/Header.html"); // On doit include le header ici car sinon l'htm
         <br />
 
         <label for="codePostal">Code postal :</label>
-        <input type="text" id="codePostal" name="codePostal" maxlength="5" value="<?php echo $vCodePostal; ?>">
+        <input type="number" id="codePostal" name="codePostal" maxlength="5" value="<?php echo $vCodePostal; ?>">
         <input type="hidden" id="codePostalA" name="codePostalA" value="<?php echo $vCodePostal; ?>">
         <br />
 
@@ -131,7 +131,7 @@ include("../html/Header.html"); // On doit include le header ici car sinon l'htm
         <br />
 
         <label for="telephone">Téléphone :</label>
-        <input type="text" id="telephone" name="telephone" maxlength="10" value="<?php echo $vTelephone; ?>">
+        <input type="number" id="telephone" name="telephone" maxlength="10" value="<?php echo $vTelephone; ?>">
         <input type="hidden" id="telephoneA" name="telephoneA" value="<?php echo $vTelephone; ?>">
         <br>
         <?php

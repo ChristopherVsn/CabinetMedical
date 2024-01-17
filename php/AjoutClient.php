@@ -45,8 +45,8 @@ include("../html/Header.html");
         <label for="prenom">Prénom *</label> <input type='text' name='prenom' id="prenom" required="required"><br>
         <label for="adresse">Adresse </label> <input type='text' name='adresse' id="adresse" required="required"><br>
         <label for="ville">Ville *</label> <input type='text' name='ville' id="ville" required="required"><br>
-        <label for="codePostal">Code postal *</label> <input type='text' name='codePostal' id="codePostal" required="required" minlength="5" maxlength="5"><br>
-        <label for="telephone">Telephone *</label> <input type='text' name='telephone' id="telephone" required="required" minlength="10" maxlength="10"><br>
+        <label for="codePostal">Code postal *</label> <input type='number' name='codePostal' id="codePostal" required="required" minlength="5" maxlength="5"><br>
+        <label for="telephone">Telephone *</label> <input type='number' name='telephone' id="telephone" required="required" minlength="10" maxlength="10"><br>
         <label for="lieuNaissance">Lieu de naissance *</label> <input type='text' name='lieuNaissance' id="lieuNaissance" required="required"><br>
         <label for="dateNaissance">Date de naissance *</label> <input type='date' name='dateNaissance' id="dateNaissance" required="required"><br>
         <label for="civilite">Civilité *</label>
@@ -54,7 +54,7 @@ include("../html/Header.html");
             <option value="Monsieur">Monsieur</option>
             <option value="Madame">Madame</option>
         </select><br>
-        <label for="numSecu">Numéro de sécurité sociale *</label> <input type='text' name='numSecu' id="numSecu" required="required" minlength="15" maxlength="15"><br>
+        <label for="numSecu">Numéro de sécurité sociale *</label> <input type='number' name='numSecu' id="numSecu" required="required" minlength="15" maxlength="15"><br>
         <label for="medecin">Medecin traitant :</label>
         
         <select id="medecin" name="medecin">

@@ -18,11 +18,11 @@ include("../html/Header.html");
         <label for="ville">Ville :</label>
         <input type="text" id="ville" name="ville" maxlength="30" placeholder="Toulouse">
         <label for="codepostal">Code Postal :</label>
-        <input type="text" id="codepostal" name="codepostal" maxlength="5" placeholder="31400">
+        <input type="number" id="codepostal" name="codepostal" maxlength="5" placeholder="31400">
         <label for="lieunaissance">Lieu de naissance :</label>
         <input type="text" id="lieunaissance" name="lieunaissance" maxlength="30" placeholder="Toulouse">
         <label for="numsecuritesocial">Numéro de sécurité sociale :</label>
-        <input type="text" id="numsecuritesocial" name="numsecuritesocial" maxlength="15" placeholder="010425451245632">
+        <input type="number" id="numsecuritesocial" name="numsecuritesocial" maxlength="15" placeholder="010425451245632">
         <input type="reset" name="reset">
         <input type="submit" name="submit" value="Rechercher">
     </form>

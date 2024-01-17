@@ -21,6 +21,8 @@ form {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top : 50px;
+    margin-bottom: 50px;
 }
 
 label {
@@ -68,7 +70,7 @@ th, td {
 }
 
 th {
-    background-color: rgba(0, 170, 255, 0.867);
+    background-color: rgba(133, 207, 255, 0.867);
 }
 
 
